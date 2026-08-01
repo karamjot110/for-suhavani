@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Girlfriend Day, Suhavani 🌹</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     EDIT ME: Core settings
+     ============================================ */
+  :root{
+    --cream:#FFF5F8;
+    --rose:#FF8FB1;
+    --rose-light:#FFD1E1;
+    --rose-lighter:#FFEEF4;
+    --rose-deep:#FF5C8A;
+    --rose-deeper:#E63E72;
+    --lavender:#C9B6E4;
+    --text-plum:#6B2E48;
+    --text-soft:#B5789A;
+    --white:#FFFFFF;
+    --shadow:0 8px 30px rgba(230,62,114,0.16);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--text-plum);
+    font-family:'Quicksand', sans-serif;
+    overflow-x:hidden;
+    cursor:none;
+  }
+
+  @media (max-width:768px), (hover:none){
+    body{cursor:auto;}
+    .cursor-dot{display:none;}
+  }
+
+  h1,h2,h3{font-family:'Fredoka', sans-serif;}
+
+  .script{font-family:'Caveat', cursive;}
+
+  /* ============================================
+     Custom cursor
+     ============================================ */
+  .cursor-dot{
+    position:fixed;
+    top:0;left:0;
+    width:18px;height:18px;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    font-size:18px;
+    transition:transform 0.08s ease-out;
+    will-change:transform;
+  }
+
+  .floating-heart{
+    position:fixed;
+    pointer-events:none;
+    font-size:14px;
+    z-index:9998;
+    animation:floatUp 1.4s ease-out forwards;
+    opacity:0.9;
+  }
+
+  @keyframes floatUp{
+    0%{transform:translate(0,0) scale(1) rotate(0deg); opacity:0.9;}
+    100%{transform:translate(var(--dx,10px),-70px) scale(0.4) rotate(20deg); opacity:0;}
+  }
+
+  /* ============================================
+     Background ambience — drifting petals
+     ============================================ */
+  .petal-field{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    overflow:hidden;
+  }
+
+  .petal{
+    position:absolute;
+    top:-40px;
+    font-size:18px;
+    opacity:0.55;
+    animation:drift linear infinite;
+  }
+
+  @keyframes drift{
+    0%{transform:translateY(-5vh) translateX(0) rotate(0deg);}
+    100%{transform:translateY(105vh) translateX(40px) rotate(360deg);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .petal, .floating-heart{animation:none; display:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  section, header, footer{position:relative; z-index:1;}
+
+  /* ============================================
+     Hero
+     ============================================ */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 24px;
+  }
+
+  .eyebrow{
+    font-family:'Caveat', cursive;
+    font-size:1.6rem;
+    color:var(--rose-deeper);
+    margin-bottom:6px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.2rem, 6vw, 4.2rem);
+    font-weight:700;
+    color:var(--text-plum);
+    line-height:1.15;
+    max-width:820px;
+  }
+
+  .hero h1 .name{
+    color:var(--rose-deeper);
+    display:inline-block;
+    position:relative;
+  }
+
+  .hero-sub{
+    margin-top:18px;
+    font-size:1.15rem;
+    color:var(--text-soft);
+    max-width:520px;
+  }
+
+  /* live counter */
+  .counter-wrap{
+    margin-top:44px;
+    background:var(--white);
+    border:2px solid var(--rose-light);
+    border-radius:28px;
+    padding:22px 36px;
+    box-shadow:var(--shadow);
+  }
+
+  .counter-label{
+    font-size:0.9rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+    font-weight:600;
+  }
+
+  .counter-number{
+    font-family:'Fredoka', sans-serif;
+    font-size:clamp(2.4rem, 8vw, 3.6rem);
+    color:var(--rose-deeper);
+    font-weight:700;
+    line-height:1.1;
+    margin:4px 0;
+  }
+
+  .counter-unit{
+    font-size:1rem;
+    color:var(--text-soft);
+  }
+
+  .scroll-cue{
+    margin-top:56px;
+    font-size:0.95rem;
+    color:var(--text-soft);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+
+  .scroll-cue span.arrow{
+    font-size:1.3rem;
+    animation:bob 1.6s ease-in-out infinite;
+  }
+
+  @keyframes bob{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
+  }
+
+  /* ============================================
+     Section shared styles
+     ============================================ */
+  .section-heading{
+    text-align:center;
+    margin-bottom:56px;
+  }
+
+  .section-heading .eyebrow{margin-bottom:8px;}
+
+  .section-heading h2{
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    color:var(--text-plum);
+  }
+
+  section.block{
+    padding:100px 24px;
+    max-width:960px;
+    margin:0 auto;
+  }
+
+  /* ============================================
+     Timeline — "the blossom branch"
+     ============================================ */
+  .branch{
+    position:relative;
+    max-width:640px;
+    margin:0 auto;
+    padding-left:8px;
+  }
+
+  .branch::before{
+    content:"";
+    position:absolute;
+    left:29px;
+    top:10px;
+    bottom:10px;
+    width:3px;
+    background:linear-gradient(to bottom, var(--rose-light), var(--rose), var(--rose-light));
+    border-radius:3px;
+  }
+
+  .node{
+    position:relative;
+    display:flex;
+    gap:22px;
+    margin-bottom:44px;
+  }
+
+  .blossom-btn{
+    flex:none;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--white);
+    border:3px solid var(--rose);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    cursor:pointer;
+    z-index:1;
+    transition:transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow:0 4px 14px rgba(255,138,101,0.2);
+  }
+
+  .blossom-btn:hover{
+    transform:scale(1.12) rotate(8deg);
+  }
+
+  .blossom-btn:focus-visible{
+    outline:3px solid var(--rose-deeper);
+    outline-offset:3px;
+  }
+
+  .node.open .blossom-btn{
+    background:var(--rose);
+    transform:scale(1.08);
+  }
+
+  .node-content{
+    flex:1;
+    padding-top:8px;
+  }
+
+  .node-date{
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--rose-deeper);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+
+  .node-title{
+    font-size:1.25rem;
+    font-weight:600;
+    color:var(--text-plum);
+    cursor:pointer;
+    user-select:none;
+  }
+
+  .node-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    opacity:0;
+    font-size:1rem;
+    color:var(--text-soft);
+    line-height:1.6;
+  }
+
+  .node.open .node-body{
+    max-height:300px;
+    opacity:1;
+    margin-top:10px;
+  }
+
+  .node.future .blossom-btn{
+    border-style:dashed;
+    color:var(--rose-deep);
+    opacity:0.85;
+  }
+
+  .node.future .node-title{
+    color:var(--text-soft);
+    font-style:italic;
+  }
+
+  /* ============================================
+     Gallery
+     ============================================ */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:22px;
+  }
+
+  .photo-frame{
+    margin:0;
+    aspect-ratio:4/5;
+    border-radius:20px;
+    background:var(--rose-lighter);
+    border:3px solid var(--white);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:transform 0.3s ease;
+  }
+
+  .photo-frame:hover{ transform:translateY(-6px) rotate(-1deg); }
+  .photo-frame:nth-child(even):hover{ transform:translateY(-6px) rotate(1deg); }
+
+  .photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .photo-placeholder{
+    text-align:center;
+    color:var(--rose-deep);
+    font-size:0.9rem;
+    padding:16px;
+  }
+
+  .photo-placeholder .icon{ font-size:2rem; display:block; margin-bottom:8px; }
+
+  .photo-caption{
+    position:absolute;
+    bottom:8px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(255,255,255,0.85);
+    color:var(--rose-deeper);
+    font-size:1.1rem;
+    padding:2px 14px;
+    border-radius:999px;
+  }
+
+  /* ============================================
+     Special photo — polaroid
+     ============================================ */
+  .polaroid-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom:28px;
+  }
+
+  .polaroid{
+    background:var(--white);
+    padding:18px 18px 40px;
+    border-radius:6px;
+    box-shadow:0 16px 40px rgba(230,62,114,0.22);
+    transform:rotate(-4deg);
+    transition:transform 0.35s ease;
+    width:min(340px, 80vw);
+    position:relative;
+  }
+
+  .polaroid:hover{
+    transform:rotate(-1deg) scale(1.02);
+  }
+
+  .polaroid-tape{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%) rotate(-3deg);
+    width:90px;
+    height:28px;
+    background:rgba(255,209,225,0.75);
+    border:1px solid rgba(255,255,255,0.5);
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .polaroid-photo{
+    aspect-ratio:1/1;
+    background:var(--rose-lighter);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .polaroid-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .polaroid-caption{
+    text-align:center;
+    font-size:1.3rem;
+    color:var(--text-plum);
+    margin-top:14px;
+  }
+
+  .special-note{
+    max-width:480px;
+    margin:0 auto;
+    text-align:center;
+    font-size:1rem;
+    color:var(--text-soft);
+    line-height:1.7;
+  }
+
+  /* ============================================
+     Love notes — flip cards
+     ============================================ */
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+  }
+
+  .flip-card{
+    perspective:1200px;
+    height:190px;
+  }
+
+  .flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    text-align:center;
+    transition:transform 0.6s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d;
+    cursor:pointer;
+  }
+
+  .flip-card.flipped .flip-card-inner{
+    transform:rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+  }
+
+  .flip-card-front{
+    background:var(--white);
+    border:2px solid var(--rose-light);
+    box-shadow:var(--shadow);
+  }
+
+  .flip-card-front .num{
+    font-family:'Fredoka', sans-serif;
+    font-size:2rem;
+    color:var(--rose);
+    font-weight:700;
+  }
+
+  .flip-card-front .hint{
+    margin-top:8px;
+    font-size:0.85rem;
+    color:var(--text-soft);
+  }
+
+  .flip-card-back{
+    background:var(--rose);
+    color:var(--white);
+    transform:rotateY(180deg);
+    font-size:1.05rem;
+    font-weight:600;
+    line-height:1.4;
+  }
+
+  /* ============================================
+     Surprise / love meter
+     ============================================ */
+  .surprise-box{
+    text-align:center;
+    background:var(--white);
+    border-radius:28px;
+    padding:56px 32px;
+    box-shadow:var(--shadow);
+    border:2px solid var(--rose-light);
+  }
+
+  .surprise-box p.script{
+    font-size:1.4rem;
+    color:var(--rose-deeper);
+    margin-bottom:22px;
+  }
+
+  .rose-btn{
+    font-family:'Fredoka', sans-serif;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--white);
+    background:var(--rose-deep);
+    border:none;
+    padding:16px 34px;
+    border-radius:999px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(255,112,67,0.35);
+    transition:transform 0.2s ease, background 0.2s ease;
+  }
+
+  .rose-btn:hover{ transform:translateY(-3px) scale(1.03); background:var(--rose-deeper); }
+  .rose-btn:focus-visible{ outline:3px solid var(--text-plum); outline-offset:3px; }
+
+  .meter-track{
+    margin:28px auto 8px;
+    max-width:340px;
+    height:16px;
+    border-radius:999px;
+    background:var(--rose-lighter);
+    overflow:hidden;
+  }
+
+  .meter-fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg, var(--rose), var(--rose-deeper));
+    border-radius:999px;
+    transition:width 0.35s ease;
+  }
+
+  .meter-caption{
+    font-size:0.9rem;
+    color:var(--text-soft);
+    min-height:20px;
+  }
+
+  .surprise-message{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height 0.5s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    font-size:1.1rem;
+    line-height:1.7;
+    color:var(--text-plum);
+    max-width:480px;
+    margin:0 auto;
+  }
+
+  .surprise-message.show{
+    max-height:400px;
+    opacity:1;
+    margin-top:26px;
+  }
+
+  /* ============================================
+     Footer
+     ============================================ */
+  footer{
+    text-align:center;
+    padding:60px 24px 80px;
+  }
+
+  footer .script{
+    font-size:1.8rem;
+    color:var(--rose-deeper);
+  }
+
+  footer .small{
+    margin-top:6px;
+    font-size:0.85rem;
+    color:var(--text-soft);
+  }
+
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot">🌹</div>
+<div class="petal-field" id="petalField"></div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<header class="hero">
+  <div class="eyebrow script">Happy Girlfriend Day</div>
+  <!-- EDIT ME: headline -->
+  <h1>Happy Girlfriend Day,<br><span class="name">Suhavani</span> 🌹</h1>
+  <p class="hero-sub">Every day with you feels like the good kind of new. Here's a little corner of the internet just for us.</p>
+
+  <div class="counter-wrap">
+    <div class="counter-label">Together since June 18, 2026</div>
+    <div class="counter-number" id="dayCounter">0</div>
+    <div class="counter-unit">days, and every single one has been a good one</div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>scroll for our story</span>
+    <span class="arrow">↓</span>
+  </div>
+</header>
+
+<!-- ============================================
+     TIMELINE
+     ============================================ -->
+<section class="block" id="story">
+  <div class="section-heading">
+    <div class="eyebrow script">Our story</div>
+    <h2>Still writing this one 🌹</h2>
+  </div>
+
+  <div class="branch">
+
+    <div class="node">
+      <button class="blossom-btn" aria-expanded="false">🌸</button>
+      <div class="node-content">
+        <div class="node-date">June 8, 2026</div>
+        <div class="node-title">The first time we all hung out</div>
+        <div class="node-body">Me, you, and Dhara. Nothing official about it, just a good day — but looking back, I think that's where this whole thing quietly started. (There's a photo from that day a little further down. You know the one.)</div>
+      </div>
+    </div>
+
+    <div class="node">
+      <button class="blossom-btn" aria-expanded="false">🌸</button>
+      <div class="node-content">
+        <div class="node-date"><!-- EDIT ME: date --> Around June 18, 2026</div>
+        <!-- EDIT ME: milestone title + note -->
+        <div class="node-title">The day we started getting close</div>
+        <div class="node-body">I won't pretend I remember every detail of exactly how it started — but I remember it felt different with you, and that's the part that stuck.</div>
+      </div>
+    </div>
+
+    <div class="node">
+      <button class="blossom-btn" aria-expanded="false">🌸</button>
+      <div class="node-content">
+        <div class="node-date">Today</div>
+        <div class="node-title">Us, as we actually are</div>
+        <div class="node-body">We fight sometimes. You get jealous. It's not always smooth. But underneath all of it, I know exactly how much you love me — and I want you to know I see it, and I'm working on showing up better for you.</div>
+      </div>
+    </div>
+
+    <div class="node">
+      <button class="blossom-btn" aria-expanded="false">🌸</button>
+      <div class="node-content">
+        <div class="node-date">A promise</div>
+        <div class="node-title">I'm going to try harder</div>
+        <div class="node-body">You've told me you want more effort from me, and you're right to ask for it. This is me saying it back, in writing, where I can't take it back: I hear you, and I'm going to show up more.</div>
+      </div>
+    </div>
+
+    <div class="node future">
+      <button class="blossom-btn" aria-expanded="false">🤍</button>
+      <div class="node-content">
+        <div class="node-date">Not written yet</div>
+        <div class="node-title">To be continued...</div>
+        <div class="node-body">Every future date, trip, and milestone gets added here as we make them. This page grows with us.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     THE SPECIAL PHOTO
+     ============================================ -->
+<section class="block" id="special-photo">
+  <div class="section-heading">
+    <div class="eyebrow script">June 8, 2026</div>
+    <h2>The stupid one</h2>
+  </div>
+
+  <div class="polaroid-wrap">
+    <div class="polaroid">
+      <div class="polaroid-tape"></div>
+      <div class="polaroid-photo">
+        <!-- EDIT ME: replace with the actual photo link -->
+        <img src="images/WhatsApp Image 2026-07-31 at 8.03.02 PM.jpeg" alt="A goofy photo of her from June 8" onerror="this.parentElement.innerHTML='&lt;div class=photo-placeholder&gt;&lt;span class=icon&gt;🌸&lt;/span&gt;Add the photo here&lt;/div&gt;'">
+      </div>
+      <div class="polaroid-caption script">the one from that first day out</div>
+    </div>
+  </div>
+
+  <p class="special-note">You'd probably kill me for posting this one. But it's my favorite kind of photo of you — the unposed, unfiltered, just-being-yourself kind. It's staying right here.</p>
+</section>
+
+<!-- ============================================
+     GALLERY
+     ============================================ -->
+<section class="block" id="gallery">
+  <div class="section-heading">
+    <div class="eyebrow script">Some of my favorites</div>
+    <h2>Us, so far</h2>
+  </div>
+
+  <div class="gallery-grid">
+    <!-- EDIT ME: replace each src with your real photo link (Imgur, Google Photos share link, GitHub, etc.) -->
+    <!-- your one photo together -->
+    <figure class="photo-frame">
+      <img src="images/WhatsApp Image 2026-07-31 at 8.00.02 PM.jpeg" alt="A photo of us together" onerror="this.parentElement.innerHTML='&lt;div class=photo-placeholder&gt;&lt;span class=icon&gt;🌹&lt;/span&gt;Add the photo of us here&lt;/div&gt;'">
+      <figcaption class="photo-caption script">us</figcaption>
+    </figure>
+    <!-- photos of her -->
+    <figure class="photo-frame">
+      <img src="images/WhatsApp Image 2026-07-31 at 8.00.02 PM (1).jpeg" alt="A photo of her" onerror="this.parentElement.innerHTML='&lt;div class=photo-placeholder&gt;&lt;span class=icon&gt;💕&lt;/span&gt;Add a photo of her here&lt;/div&gt;'">
+      <figcaption class="photo-caption script">her, being her favorite subject</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================
+     WHY I LOVE YOU — flip cards
+     ============================================ -->
+<section class="block" id="reasons">
+  <div class="section-heading">
+    <div class="eyebrow script">Tap each one</div>
+    <h2>A few reasons, out of many</h2>
+  </div>
+
+  <div class="cards-grid">
+    <!-- EDIT ME: swap the back text on each card for real reasons -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><span class="num">01</span><span class="hint">tap me</span></div>
+        <div class="flip-card-back">You pick fights sometimes — and I think it's you checking if I'll still choose you. I will.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><span class="num">02</span><span class="hint">tap me</span></div>
+        <div class="flip-card-back">You get jealous, and honestly, it just tells me how much you care</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><span class="num">03</span><span class="hint">tap me</span></div>
+        <div class="flip-card-back">You love without holding back, even when it's messy</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><span class="num">04</span><span class="hint">tap me</span></div>
+        <div class="flip-card-back">You ask for more effort because you deserve it — noted, and I'm on it</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><span class="num">05</span><span class="hint">tap me</span></div>
+        <div class="flip-card-back">...and about a hundred more I'm still discovering 🌹</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SURPRISE
+     ============================================ -->
+<section class="block" id="surprise">
+  <div class="surprise-box">
+    <p class="script">one more thing...</p>
+    <button class="rose-btn" id="loveBtn">Tap the rose 🌹</button>
+    <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+    <div class="meter-caption" id="meterCaption">&nbsp;</div>
+    <!-- EDIT ME: the final message -->
+    <div class="surprise-message" id="surpriseMessage">
+      Happy Girlfriend Day, Suhavani. We're not perfect — we fight, you get jealous, I don't always get it right. But I see how hard you love me, and I'm not going anywhere. I'm going to put in the effort you deserve, starting now. 🌹💕
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="script">made with a little bit of love, for you.</div>
+  <div class="small">click around — there's more if you keep tapping 🌸</div>
+</footer>
+
+<script>
+  // ============================================
+  // Live day counter — EDIT the date below to change the start
+  // ============================================
+  const START_DATE = new Date('2026-06-18T00:00:00');
+
+  function updateCounter(){
+    const now = new Date();
+    const diffMs = now - START_DATE;
+    const days = Math.max(0, Math.floor(diffMs / (1000*60*60*24)));
+    document.getElementById('dayCounter').textContent = days;
+  }
+  updateCounter();
+  setInterval(updateCounter, 1000 * 60 * 30); // refresh every 30 min
+
+  // ============================================
+  // Timeline nodes
+  // ============================================
+  document.querySelectorAll('.node').forEach(node => {
+    const btn = node.querySelector('.blossom-btn');
+    const title = node.querySelector('.node-title');
+    function toggle(){
+      const isOpen = node.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+    btn.addEventListener('click', toggle);
+    title.addEventListener('click', toggle);
+  });
+
+  // ============================================
+  // Flip cards
+  // ============================================
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+
+  // ============================================
+  // Love meter + surprise reveal
+  // ============================================
+  const loveBtn = document.getElementById('loveBtn');
+  const meterFill = document.getElementById('meterFill');
+  const meterCaption = document.getElementById('meterCaption');
+  const surpriseMessage = document.getElementById('surpriseMessage');
+  const captions = ['sweet 🌹','getting warmer 💛','pretty cute 🌸','really cute 💕','my whole world 🥹'];
+  let taps = 0;
+
+  loveBtn.addEventListener('click', () => {
+    taps = Math.min(taps + 1, 5);
+    meterFill.style.width = (taps/5*100) + '%';
+    meterCaption.textContent = captions[taps-1];
+    if(taps >= 5){
+      surpriseMessage.classList.add('show');
+      loveBtn.textContent = 'Full of love 🌹';
+      loveBtn.disabled = true;
+    }
+  });
+
+  // ============================================
+  // Custom cursor + floating hearts
+  // ============================================
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(hover:none)').matches;
+
+  if(!reduceMotion && !isTouch){
+    const dot = document.getElementById('cursorDot');
+    let lastSpawn = 0;
+
+    window.addEventListener('mousemove', e => {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+
+      const now = Date.now();
+      if(now - lastSpawn > 260){
+        lastSpawn = now;
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.textContent = Math.random() > 0.5 ? '💕' : '🌸';
+        heart.style.left = e.clientX + 'px';
+        heart.style.top = e.clientY + 'px';
+        heart.style.setProperty('--dx', (Math.random()*30-15) + 'px');
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1500);
+      }
+    });
+  } else {
+    document.getElementById('cursorDot').style.display = 'none';
+  }
+
+  // ============================================
+  // Background drifting petals
+  // ============================================
+  if(!reduceMotion){
+    const field = document.getElementById('petalField');
+    const petalEmojis = ['🌸','🌹','💮'];
+    const count = window.innerWidth < 700 ? 8 : 14;
+    for(let i=0; i<count; i++){
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = petalEmojis[Math.floor(Math.random()*petalEmojis.length)];
+      p.style.left = Math.random()*100 + 'vw';
+      p.style.animationDuration = (14 + Math.random()*12) + 's';
+      p.style.animationDelay = (Math.random()*10) + 's';
+      p.style.fontSize = (14 + Math.random()*10) + 'px';
+      field.appendChild(p);
+    }
+  }
+</script>
+
+</body>
+</html>
